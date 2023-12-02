@@ -8,4 +8,4 @@ def home(request):
 
 
 def livros(request, id):
-    return render(request,'pyblioteca/pages/home.html')
+    return render(request,'pyblioteca/pages/livros-view.html')
