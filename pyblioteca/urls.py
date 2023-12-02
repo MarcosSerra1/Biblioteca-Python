@@ -1,10 +1,8 @@
 from django.urls import path
 
-from pyblioteca.views import cadastrar_livros, editar_excluir, home, sobre
+from pyblioteca import views
 
 urlpatterns = [
-    path('', home),  # Home
-    path('editar_excluir/', editar_excluir),  # /editar_excluir/
-    path('sobre/', sobre),  # /sobre/
-    path('cadastrar_livros/', cadastrar_livros)  # /cadastrar_livros
+    path('', views.home),  # Home
+    path('livros/<int:id>/', views.livros),  # livros
 ]
