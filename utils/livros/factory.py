@@ -14,6 +14,7 @@ fake = Faker('pt_BR')
 
 def make_livros():
     return {
+        'id': fake.random_number(digits=2, fix_len=True),
         'title': fake.sentence(nb_words=6),
         'description': fake.sentence(nb_words=12),
         'reading_time': fake.random_number(digits=2, fix_len=True),
@@ -30,7 +31,7 @@ def make_livros():
             'name': fake.word()
         },
         'cover': {
-            'url': 'https://loremflickr.com/%s/%s/book,covers' % rand_ratio(),
+            'url': 'https://loremflickr.com/%s/%s/covers,book' % rand_ratio(),
         }
     }
 

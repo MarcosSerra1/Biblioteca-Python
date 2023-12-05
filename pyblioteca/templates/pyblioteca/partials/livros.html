@@ -1,8 +1,14 @@
 <div class="livros livros-list-item">
     <div class="livros-cover">
-        <img src="{{ livro.cover.url }}" alt="Temporario">
+        <a href="{% url 'livros:livro' livro.id %}">
+            <img src="{{ livro.cover.url }}" alt="Temporario">
+        </a>
         <div class="livros-title-container">
-            <h2 class="livros-title">{{ livro.title}}</h2>
+            <h2 class="livros-title">
+                <a href="{% url 'livros:livro' livro.id %}">
+                    {{ livro.title}}
+                </a>
+            </h2>
         </div>
 
         <div class="livros-author">
@@ -44,18 +50,18 @@
             </div>
         </div>
         {% if is_detail_page is not True %}
-            <footer class="livros-footer">
-                <a class="livros-read-more button button-dark button-full-width" href="/livros/3/">
-                    <i class="fas fa-eye"></i>
-                    <span>ver mais...</span>
-                </a>
-            </footer>
+        <footer class="livros-footer">
+            <a class="livros-read-more button button-dark button-full-width" href="{% url 'livros:livro' livro.id %}">
+                <i class="fas fa-eye"></i>
+                <span>ver mais...</span>
+            </a>
+        </footer>
         {% endif %}
 
         {% if is_detail_page is True %}
-            <div class="chapters">
-                {{ livro.chapters|linebreaksbr }}
-            </div>
+        <div class="chapters">
+            {{ livro.chapters|linebreaksbr }}
+        </div>
         {% endif %}
     </div>
 </div> <!--livros-list-item-->
