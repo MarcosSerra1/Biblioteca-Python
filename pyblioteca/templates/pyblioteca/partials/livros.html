@@ -1,57 +1,61 @@
 <div class="livros livros-list-item">
     <div class="livros-cover">
-        <img src="https://placehold.co/1280x720.png/#269fe6" alt="Temporario">
+        <img src="{{ livro.cover.url }}" alt="Temporario">
         <div class="livros-title-container">
-            <h2 class="livros-title">Lorem ipsum dolor sit amet.</h2>
+            <h2 class="livros-title">{{ livro.title}}</h2>
         </div>
 
         <div class="livros-author">
             <span class="livros-author-item">
                 <i class="fas fa-user"></i>
-                Marcos Serra
+                {{ livro.author.first_name}} {{ livro.author.last_name}}
             </span>
 
             <span class="livros-author-item">
                 <i class="fas fa-calendar-alt"></i>
-                30/11/2023 às 17:25
+                {{ livro.launched_in|date:"d/m/Y" }}
             </span>
 
             <span class="livros-author-item">
                 <a href="livros/category/fantasia">
                     <i class="fas fa-layer-group"></i>
-                    <span>Fantasia</span>
+                    <span>{{ livro.category.name }}</span>
                 </a>
             </span>
         </div>
 
         <div class="livros-content">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis, cumque velit. Placeat, at
-                autem numquam voluptatum cumque voluptatibus rem nam enim itaque ab, vero amet ipsum, quo
-                dolores minima illo.</p>
+            <p>{{ livro.description }}</p>
         </div>
 
         <div class="livros-meta-container">
             <div class="livros-meta livros-preparation">
                 <h3 class="livros-meta-title"><i class="fas fa-stopwatch"></i> Leitura</h3>
                 <div class="livros-meta-text">
-                    0 Minutos
+                    {{ livro.reading_time }} {{ livro.reading_time_chapter }}
                 </div>
             </div>
 
             <div class="livros-meta livros-servings">
                 <h3 class="livros-meta-title"><i class="fa-regular fa-book"></i> Quantidade</h3>
                 <div class="livros-meta-text">
-                    0 Livros
+                    {{ livro.amount }} {{ livro.amount_unit }}
                 </div>
             </div>
         </div>
+        {% if is_detail_page is not True %}
+            <footer class="livros-footer">
+                <a class="livros-read-more button button-dark button-full-width" href="/livros/3/">
+                    <i class="fas fa-eye"></i>
+                    <span>ver mais...</span>
+                </a>
+            </footer>
+        {% endif %}
 
-        <footer class="livros-footer">
-            <a class="livros-read-more button button-dark button-full-width" href="/livros/3/">
-                <i class="fas fa-eye"></i>
-                <span>ver mais...</span>
-            </a>
-        </footer>
-
+        {% if is_detail_page is True %}
+            <div class="chapters">
+                {{ livro.chapters|linebreaksbr }}
+            </div>
+        {% endif %}
     </div>
 </div> <!--livros-list-item-->

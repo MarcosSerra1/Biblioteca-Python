@@ -1,15 +1,9 @@
-{% include 'pyblioteca/partials/head.html' %}
+{% extends "global/base.html" %}
 
-<body>
-    {% include 'pyblioteca/partials/header.html' %}
-    {% include 'pyblioteca/partials/search.html' %}
+{% block title %}ALTERAR | {% endblock title %}
 
-    <main class="main-content-container">
-        <div class="main-content main-content-detail container">
-            {% include 'pyblioteca/partials/livros.html' %}
-        </div>
-    </main>
-    {% include 'pyblioteca/partials/footer.html' %}
-</body>
-
-</html>
+{% block content %}
+    <div class="main-content main-content-detail container">
+        {% include 'pyblioteca/partials/livros.html' %}
+    </div>
+{% endblock content %}

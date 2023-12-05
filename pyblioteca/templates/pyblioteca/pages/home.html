@@ -1,23 +1,13 @@
-{% include 'pyblioteca/partials/head.html' %}
+{% extends "global/base.html" %}
 
-<body>
-    {% include 'pyblioteca/partials/header.html' %}
-    {% include 'pyblioteca/partials/search.html' %}
+{% block title %}Home | {% endblock title %}
 
-    <main class="main-content-container">
-        <div class="main-content main-content-list container">
-            {% include 'pyblioteca/partials/livros.html' %}
-            {% include 'pyblioteca/partials/livros.html' %}
-            {% include 'pyblioteca/partials/livros.html' %}
-            {% include 'pyblioteca/partials/livros.html' %}
-            {% include 'pyblioteca/partials/livros.html' %}
-            {% include 'pyblioteca/partials/livros.html' %}
-            {% include 'pyblioteca/partials/livros.html' %}
-            {% include 'pyblioteca/partials/livros.html' %}
-            {% include 'pyblioteca/partials/livros.html' %}
-        </div>
-    </main>
-    {% include 'pyblioteca/partials/footer.html' %}
-</body>
+{% block content %}
+    <div class="main-content main-content-list container">
+        {% for livro in livros %}
 
-</html>
+        {% include 'pyblioteca/partials/livros.html' %}
+
+        {% endfor %}
+    </div>
+{% endblock content %}
