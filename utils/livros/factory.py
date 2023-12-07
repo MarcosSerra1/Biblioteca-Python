@@ -31,7 +31,7 @@ def make_livros():
             'name': fake.word()
         },
         'cover': {
-            'url': 'https://loremflickr.com/%s/%s/covers,book' % rand_ratio(),
+            'url': 'https://loremflickr.com/%s/%s/fantasy,book' % rand_ratio(),
         }
     }
 
