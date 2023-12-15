@@ -1,3 +1,20 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import *
+
+
+@admin.register(Autor)
+class AutorAdmin(admin.ModelAdmin):
+    ...
+
+
+class GeneroAdmin(admin.ModelAdmin):
+    ...
+
+
+@admin.register(Livros)
+class LivroAdmin(admin.ModelAdmin):
+    ...
+
+
+admin.site.register(Genero, GeneroAdmin)
