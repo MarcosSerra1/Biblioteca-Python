@@ -18,6 +18,7 @@ class Genero(models.Model):
 class Livros(models.Model):
     titulo = models.CharField(max_length=200)
     descricao = models.TextField()
+    slug = models.SlugField(null=True)
     tempo_de_leitura = models.CharField(max_length=100)
     quantidade_de_livros = models.IntegerField()
     capitulos = models.IntegerField()
