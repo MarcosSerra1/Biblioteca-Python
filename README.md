@@ -25,7 +25,12 @@ O PyBlioteca é um sistema de biblioteca em desenvolvimento usando o framework D
    - Realize buscas por ID, gênero e nome para localizar facilmente os livros desejados.
 
 5. **Visualização dos Livros:**
-   - A funcionalidade de visualização dos livros não está implementada nesta versão inicial, mas está nos planos futuros do projeto.
+
+   - Visualização de livros com capa, descrição, tempo de leitura, quantidade de livros e etc.
+
+6. **Empréstimo**
+
+   - Funcionalidade em desenvolvimento.
 
 ## Tecnologias Utilizadas
 
