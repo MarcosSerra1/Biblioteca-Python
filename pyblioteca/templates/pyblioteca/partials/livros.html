@@ -1,12 +1,12 @@
 <div class="livros livros-list-item">
     <div class="livros-cover">
         <a href="{% url 'livros:livro' livro.id %}">
-            <img src="{{ livro.cover.url }}" alt="Temporario">
+            <img src="{{ livro.capa.url }}" alt="{{ livro.slug }}">
         </a>
         <div class="livros-title-container">
             <h2 class="livros-title">
                 <a href="{% url 'livros:livro' livro.id %}">
-                    {{ livro.title}}
+                    {{ livro.titulo}}
                 </a>
             </h2>
         </div>
@@ -14,38 +14,38 @@
         <div class="livros-author">
             <span class="livros-author-item">
                 <i class="fas fa-user"></i>
-                {{ livro.author.first_name}} {{ livro.author.last_name}}
+                {{ livro.autor}}
             </span>
 
             <span class="livros-author-item">
                 <i class="fas fa-calendar-alt"></i>
-                {{ livro.launched_in|date:"d/m/Y" }}
+                {{ livro.data_de_lancamento|date:"d/m/Y" }}
             </span>
 
             <span class="livros-author-item">
                 <a href="livros/category/fantasia">
                     <i class="fas fa-layer-group"></i>
-                    <span>{{ livro.category.name }}</span>
+                    <span>{{ livro.genero }}</span>
                 </a>
             </span>
         </div>
-
-        <div class="livros-content">
-            <p>{{ livro.description }}</p>
-        </div>
-
+        {% if is_detail_page is True %}
+            <div class="livros-content">
+                <p>{{ livro.descricao }}</p>
+            </div>
+        {% endif %}
         <div class="livros-meta-container">
             <div class="livros-meta livros-preparation">
-                <h3 class="livros-meta-title"><i class="fas fa-stopwatch"></i> Leitura</h3>
+                <h3 class="livros-meta-title"><i class="fas fa-stopwatch"></i> Tempo de Leitura </h3>
                 <div class="livros-meta-text">
-                    {{ livro.reading_time }} {{ livro.reading_time_chapter }}
+                    {{ livro.tempo_de_leitura }}
                 </div>
             </div>
 
             <div class="livros-meta livros-servings">
-                <h3 class="livros-meta-title"><i class="fa-regular fa-book"></i> Quantidade</h3>
+                <h3 class="livros-meta-title"><i class="fa-regular fa-book"></i> Capitulos</h3>
                 <div class="livros-meta-text">
-                    {{ livro.amount }} {{ livro.amount_unit }}
+                    {{ livro.capitulos }}
                 </div>
             </div>
         </div>
@@ -60,7 +60,7 @@
 
         {% if is_detail_page is True %}
         <div class="chapters">
-            {{ livro.chapters|linebreaksbr }}
+            {{ livro.|linebreaksbr }}
         </div>
         {% endif %}
     </div>

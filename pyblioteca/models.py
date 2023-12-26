@@ -4,6 +4,11 @@ from django.db import models
 class Autor(models.Model):
     nome = models.CharField(max_length=200)
 
+
+    class Meta():
+        verbose_name = 'Autore'
+
+
     def __str__(self):
         return self.nome
 
@@ -27,6 +32,11 @@ class Livros(models.Model):
     capa = models.ImageField(upload_to='livros/capas/%Y/%m/%d/', null=True, blank=True)
     autor = models.ForeignKey(Autor, on_delete=models.SET_NULL, null=True)
     genero = models.ForeignKey(Genero, on_delete=models.SET_NULL, null=True)
+
+
+    class Meta():
+        verbose_name = 'Livro'
+
 
     def __str__(self):
         return self.titulo
