@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import *
+
+
+@admin.register(Usuario)
+class UsuarioAdmin(admin.ModelAdmin):
+    readonly_fields = ('nome', 'sobrenome', 'email', 'senha')

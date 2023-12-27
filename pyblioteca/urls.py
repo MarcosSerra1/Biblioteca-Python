@@ -6,6 +6,6 @@ from pyblioteca import views
 app_name = 'livros'
 
 urlpatterns = [
-    path('', views.home, name='home'),  # Home
+    path('home/', views.home, name='home'),  # Home pagina vitrine
     path('livros/<int:id>/', views.livros, name='livro'),  # livros
 ]

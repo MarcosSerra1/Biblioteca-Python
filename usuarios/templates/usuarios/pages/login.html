@@ -1,0 +1,44 @@
+{% extends "global/baseusuarios.html" %}
+
+{% block title %}Login | {% endblock title %}
+
+{% block content %}
+<div class="container">
+    {% if status == '1' %}
+        <div class="alert alert-danger" role="alert">
+            <strong>Ops!</strong> Parece que a combinação email/senha não está correta. Por favor, verifique e tente novamente.
+        </div>
+    {% endif %}
+
+    {% if status == '2' %}
+        <div class="alert alert-danger" role="alert">
+            <strong>Ops!</strong> Por favor, faça login antes de acessar o sistema.
+        </div>
+    {% endif %}
+
+    {% if status == '3' %}
+        <div class="alert alert-success" role="alert">
+            <strong>Logout realizado com sucesso!</strong>
+        </div>
+    {% endif %}
+
+    <h1>Login</h1>
+    <br>
+    <form method="POST" action="{% url 'valida_login' %}"> {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Endereço de email</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required
+                placeholder="nome@email.com" name="email">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Senha</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" required
+                placeholder="Digite sua senha" name="senha">
+        </div>
+        <button type="submit" class="btn btn-primary">Entrar</button>
+        <br>
+        <br>
+        <p>Ainda não tem conta? <a href="{% url 'cadastro' %}" class="">Cadastre-se</a></p>
+    </form>
+</div>
+{% endblock content %}
