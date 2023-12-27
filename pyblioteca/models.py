@@ -23,13 +23,13 @@ class Genero(models.Model):
 class Livros(models.Model):
     titulo = models.CharField(max_length=200)
     descricao = models.TextField()
-    slug = models.SlugField(null=True)
+    slug = models.SlugField(max_length=100, null=True)
     tempo_de_leitura = models.CharField(max_length=100)
     quantidade_de_livros = models.IntegerField()
     capitulos = models.IntegerField()
     data_de_lancamento = models.DateField()
     esta_emprestado = models.BooleanField(default=False)
-    capa = models.ImageField(upload_to='livros/capas/%Y/%m/%d/', null=True, blank=True)
+    capa = models.ImageField(upload_to='livros/capas/%Y/%m/%d/')
     autor = models.ForeignKey(Autor, on_delete=models.SET_NULL, null=True)
     genero = models.ForeignKey(Genero, on_delete=models.SET_NULL, null=True)
 
