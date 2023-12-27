@@ -4,33 +4,35 @@
 
 ## Descrição
 
-O PyBlioteca é um sistema de biblioteca em desenvolvimento usando o framework Django. Este projeto visa criar uma aplicação web robusta para gerenciamento de livros, oferecendo funcionalidades essenciais para uma biblioteca eficiente.
+O PyBlioteca é um sistema de biblioteca em desenvolvimento usando o framework Django. Este projeto visa criar uma aplicação web para gerenciamento de livros, oferecendo funcionalidades essenciais para uma biblioteca eficiente.
 
 ## Funcionalidades Funcionais
 
-1. **Criação de Novos Livros:**
+1. **Criação de Novos Livros:** ✅
 
    - Adicione novos livros à biblioteca, fornecendo informações como título, autor, gênero e sinopse.
 
-2. **Edição dos Livros:**
+2. **Edição dos Livros:** ✅
 
    - Atualize informações de livros existentes, como título, autor, gênero, sinopse, etc.
 
-3. **Exclusão dos Livros:**
+3. **Exclusão dos Livros:** ✅
 
    - Remova livros da biblioteca, garantindo um gerenciamento eficaz do acervo.
 
-4. **Busca de Livros:**
+4. **Busca de Livros:** (_em desenvolvimento_) ⏲️
 
    - Realize buscas por ID, gênero e nome para localizar facilmente os livros desejados.
 
-5. **Visualização dos Livros:**
+5. **Visualização dos Livros:** ✅
 
    - Visualização de livros com capa, descrição, tempo de leitura, quantidade de livros e etc.
 
-6. **Empréstimo**
+6. **Empréstimo** ⏲️
 
    - Funcionalidade em desenvolvimento.
+
+7. **Página de Login e Cadastro** ✅
 
 ## Tecnologias Utilizadas
 
