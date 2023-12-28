@@ -1,5 +1,7 @@
 from django.db import models
 
+from usuarios.models import Usuario
+
 
 class Autor(models.Model):
     nome = models.CharField(max_length=200)
@@ -32,7 +34,7 @@ class Livros(models.Model):
     capa = models.ImageField(upload_to='livros/capas/%Y/%m/%d/')
     autor = models.ForeignKey(Autor, on_delete=models.SET_NULL, null=True)
     genero = models.ForeignKey(Genero, on_delete=models.SET_NULL, null=True)
-
+    usuario = models.ForeignKey(Usuario, on_delete=models.DO_NOTHING)
 
     class Meta():
         verbose_name = 'Livro'
